@@ -1,0 +1,155 @@
+<div class="row ">
+    <div class="col-md-8">
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control" placeholder="Search organizations" ng-model="searchorganization">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="pull-right">
+            <div class="table-button">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     Options
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="#">Show 10 Entries</a>
+                    </li>
+                    <li><a href="#">Another action</a>
+                    </li>
+                    <li><a href="#">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+    <tr>
+        <td>
+            <a href="#" ng-click="sortType = 'organization_name'; sortReverse = !sortReverse">
+                Organization Name
+                <span ng-show="sortType == 'organization_name' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'organization_name' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+        <td>
+            <a href="#" ng-click="sortType = 'organization_type'; sortReverse = !sortReverse">
+               Date Created
+                <span ng-show="sortType == 'organization_type' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'organization_type' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+        <td>
+            <a href="#" ng-click="sortType = '_active'; sortReverse = !sortReverse">
+                 isActive
+                <span ng-show="sortType == '_active' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == '_active' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+        <td>
+            <a href="#">
+                Actions
+                <span ng-show="sortType == '_active' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == '_active' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="organization in organizations | orderBy:sortType:sortReverse | filter:searchorganization">
+        <td>{{ organization.organization_name  }}</td>
+        <td>{{ organization.created_at }}</td>
+        <td>{{ organization._active }}</td>
+        <td class="text-center">
+
+            <button type="button" class="btn btn-default btn-circle"><i class="fa fa-check"></i>
+            </button>
+            <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i>
+            </button>
+            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i>
+            </button>
+            <button type="button" class="btn btn-info btn-circle"><i class="fa fa-check"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i>
+            </button>
+
+
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+<div class="row ">
+    <div class="col-md-4"><div class="table-pagination-status">Showing 1 to 10 of 57 entries</div> </div>
+    <div class="col-md-8">
+        <ul class="table-pagination">
+            <li class="paginate_button previous disabled" tabindex="0">
+                <a href="#">Previous</a>
+            </li>
+
+            <li class="paginate_button active" tabindex="0">
+                <a href="#">1</a>
+            </li>
+
+            <li class="paginate_button" tabindex="0">
+                <a href="#">2</a>
+            </li>
+
+            <li class="paginate_button" tabindex="0">
+                <a href="#">3</a>
+            </li>
+
+            <li class="paginate_button" tabindex="0">
+                <a href="#">4</a>
+            </li>
+
+            <li class="paginate_button" tabindex="0">
+                <a href="#">5</a>
+            </li>
+
+            <li class="paginate_button" tabindex="0">
+                <a href="#">6</a>
+            </li>
+            <li class="paginate_button" tabindex="0">
+                <a href="#">7</a>
+            </li>
+            <li class="paginate_button" tabindex="0">
+                <a href="#">8</a>
+            </li>
+            <li class="paginate_button" tabindex="0">
+                <a href="#">9</a>
+            </li>
+            <li class="paginate_button" tabindex="0">
+                <a href="#">10</a>
+            </li>
+
+
+            <li class="paginate_button next" id="dataTables-example_next"
+                tabindex="0">
+                <a href="#">Next</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+

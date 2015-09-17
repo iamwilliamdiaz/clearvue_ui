@@ -1,0 +1,38 @@
+{
+  "name": "clearvue-bootstrap-angular",
+  "version": "1.0.7",
+  "homepage": "http://clearvue.com",
+  "authors": [
+    "William Diaz"
+  ],
+  "description": "AngularJs/Bootstrap ClearVue Project",
+  "keywords": [
+    "bootstrap",
+    "theme"
+  ],
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "dist",
+    "tests",
+    "pages",
+    "index.html",
+    "/js"
+  ],
+  "main": [
+    "app/assets/css/clearvue.css",
+    "app/assets/js/clearvue.js"
+  ],
+  "dependencies": {
+    "angular-chart.js": "~0.8.4",
+    "bootstrap": "~3.3.1",
+    "bootstrap-social": "~4.8.0",
+    "flot": "~0.8.3",
+    "flot.tooltip": "~0.8.4",
+    "font-awesome": "~4.2.0",
+    "holderjs": "~2.4.1"
+  }
+}
